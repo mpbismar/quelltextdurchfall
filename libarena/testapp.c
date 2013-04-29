@@ -7,8 +7,10 @@ do { if (! VAR ) fprintf(stderr, "Problem: " #VAR " is NULL\n" ); } while (0)
 int main() {
 	void *f, *g, *h;
 
-	unsigned short testomat = 4;
-	printf("Bit ist: %d\n", check_bit((&testomat), 3));
+	unsigned short testomat = 126;
+	printf("Bit ist: %d\n", check_bit((&testomat), 0));
+	printf("Bit ist: %d\n", check_bit((&testomat), 6));
+	print_bitmap(&testomat);
 	
 	// f = allocate(); check( f );
 	// g = allocate(); check( g );
