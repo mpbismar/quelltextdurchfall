@@ -11,6 +11,13 @@ int main() {
 	printf("Bit ist: %d\n", check_bit((&testomat), 0));
 	printf("Bit ist: %d\n", check_bit((&testomat), 6));
 	print_bitmap(&testomat);
+	set_bit(&testomat,15);
+	print_bitmap(&testomat);
+	unset_bit(&testomat,0);
+	print_bitmap(&testomat);
+
+
+
 	
 	// f = allocate(); check( f );
 	// g = allocate(); check( g );
