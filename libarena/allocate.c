@@ -1,4 +1,29 @@
 /* allocate.c */
+#include "allocate.h"
+#include "arena.h"
+#include "bithandler.h"
 
-void* allocate() { return (void*) 0; };
-void deallocate(void *data) {};
+
+// void* allocate() 
+// { 
+// 	for ()
+// 	{
+
+
+
+// 	}
+
+
+// 	return (void*) 0; 
+// }
+
+
+
+// void deallocate(void *data) 
+// {
+
+
+
+
+
+// }
