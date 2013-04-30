@@ -12,7 +12,7 @@ void* allocate()
 
 	// ersten nicht vollen short finden
 	int i;
-	int current_short;
+	int current_short = -1;
 	int current_bit;
 	
 	for (i=0; i < (NUM_BLOCKS/16); i++)
@@ -25,7 +25,14 @@ void* allocate()
 
 	}
 
+	// kein freies short gefunden --> Nullpointer returnen
+	if (current_short == -1)
+	{
+		fprintf(stderr, "Warning: Arena full!\n");
+		return (void*) 0; 
+	}
 
+	// sonst weiter mit freiem short!
 	// freies bit finden & 1 setzen
 	for (i=0; i<16; i++)
 	{
@@ -41,12 +48,34 @@ void* allocate()
 	int offset = 16*current_short + current_bit;
 
 	// pointer returnen
+	printf("[info] allocated block: %d/%d [%d]\n", current_short, current_bit, (int)(&arena[offset*BLOCKSIZE]));
 	return &arena[offset*BLOCKSIZE];
 
-
-	// wenn alles voll: nullpointer zurueckgeben
-	// return (void*) 0; 
 }
+
+
+
+
+void deallocate(void *data) 
+{
+
+	int offset, current_bit, current_short;
+
+	// aus pointer offset berechnen
+	offset = (((int)data - (int)(&arena[0]))/BLOCKSIZE);
+	// printf("[debug] offset: %d - %d / size =  %d\n", (int)data, (int)(&arena[0]), offset);
+
+	// short und bit bestimmen
+
+
+	current_bit = offset % 16;
+	current_short = (offset - current_bit) / 16;
+
+	// bit unsetten
+	unset_bit(&allocated_map[current_short], current_bit);
+	printf("[info] deallocated block: %d/%d [%d]\n", current_short, current_bit, (int)(&arena[offset*BLOCKSIZE]));
+}
+
 
 void print_all_map()
 {
@@ -57,15 +86,4 @@ void print_all_map()
 		print_bitmap(&allocated_map[i]);
 	}
 	printf("======== / MAP ==========\n\n");
-}
-
-
-
-void deallocate(void *data) 
-{
-
-
-
-
-
 }
