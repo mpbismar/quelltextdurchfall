@@ -48,7 +48,7 @@ void* allocate()
 	int offset = 16*current_short + current_bit;
 
 	// pointer returnen
-	printf("[info] allocated block: %d/%d [%d]\n", current_short, current_bit, (int)(&arena[offset*BLOCKSIZE]));
+	printf("[info] allocated block: %d/%d [%ld]\n", current_short, current_bit, (long)(&arena[offset*BLOCKSIZE]));
 	return &arena[offset*BLOCKSIZE];
 
 }
@@ -62,7 +62,7 @@ void deallocate(void *data)
 	int offset, current_bit, current_short;
 
 	// aus pointer offset berechnen
-	offset = (((int)data - (int)(&arena[0]))/BLOCKSIZE);
+	offset = (((long)data - (long)(&arena[0]))/BLOCKSIZE);
 	// printf("[debug] offset: %d - %d / size =  %d\n", (int)data, (int)(&arena[0]), offset);
 
 	// short und bit bestimmen
@@ -73,7 +73,7 @@ void deallocate(void *data)
 
 	// bit unsetten
 	unset_bit(&allocated_map[current_short], current_bit);
-	printf("[info] deallocated block: %d/%d [%d]\n", current_short, current_bit, (int)(&arena[offset*BLOCKSIZE]));
+	printf("[info] deallocated block: %d/%d [%ld]\n", current_short, current_bit, (long)(&arena[offset*BLOCKSIZE]));
 }
 
 
