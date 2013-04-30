@@ -10,17 +10,20 @@ int main() {
 	unsigned short testomat = 126;
 	printf("Bit ist: %d\n", check_bit((&testomat), 0));
 	printf("Bit ist: %d\n", check_bit((&testomat), 6));
-	print_bitmap(&testomat);
-	set_bit(&testomat,15);
-	print_bitmap(&testomat);
-	unset_bit(&testomat,0);
-	print_bitmap(&testomat);
 
-
+	print_all_map();
 
 	
-	// f = allocate(); check( f );
-	// g = allocate(); check( g );
+	f = allocate(); check( f );
+
+	print_all_map();
+
+	// printf("arena= %d\n", (short)arena[0]);
+	printf("f= %d\n", (int)f);
+
+
+	g = allocate(); check( g );
+	printf("g= %d\n", (int)g);
 	// deallocate(g);
 	// h = allocate(); check( h );
 	// deallocate(f);

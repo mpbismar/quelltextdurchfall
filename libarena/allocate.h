@@ -5,6 +5,6 @@
 
 void* allocate();
 void deallocate(void *data);
+void print_all_map();
 
 # endif
-  
