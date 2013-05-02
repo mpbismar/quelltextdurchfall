@@ -6,8 +6,8 @@ LIBARENA=.
 libarena.a: $(OBJ)
 	ar rcs $@ $(OBJ)
 
-testapp.o: libarena.a
-	$(CC) --static -I. -L$(LIBARENA) -o testapp.o testapp.c -larena 
+testapp: libarena.a
+	$(CC) testapp.c $(LIBARENA)/libarena.a -o testapp.o
 
 all: libarena.a testapp
 
