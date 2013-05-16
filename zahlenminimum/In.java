@@ -1,5 +1,6 @@
 // Sedgewick, Adapterklasse
 
+
 import java.io.*;
 
 public class In {
