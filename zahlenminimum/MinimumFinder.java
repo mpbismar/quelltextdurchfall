@@ -6,7 +6,7 @@ public class MinimumFinder {
 	public static void main(String[] args) {
 		
 		//In myIn = new In();
-		System.out.println("Usage: beliebig viele ganze Zahlen eingeben, Ende mit negativer Zahl!");
+		System.out.println("Usage: beliebig viele ganze positive Zahlen eingeben, Ende mit negativer Zahl!");
 		In.init();
 		
 		int minimum = 0;
