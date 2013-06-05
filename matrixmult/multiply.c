@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <time.h>
+
 /* Dimension of the matrices */
+#ifndef N
 #define N 10
+#endif
 
 /* global matrices */
 double A[N][N];
@@ -52,6 +56,7 @@ void mult(double C[N][N], double A[N][N], double B[N][N])
 {
   int i,k,m;
   for (i=0; i<N; i++) {
+    printf("start %d/%d\n", i, N);
     for (k=0; k<N; k++) {
       C[i][k] = 0.0;
       for (m=0; m<N; m++)
@@ -64,11 +69,29 @@ int main()
 {
   init(A, 1);
   init(B, 2);
+
+// Clock Variablen
+  clock_t c1;
+  clock_t c2;
+
+// Rechenzeit vor Mult
+ c1 = clock();
   mult(C, A, B);
-  printf("========== A ============\n");
-  print(A);
-  printf("========== B ============\n");
-  print(B);
-  printf("========== C ============\n");
-  print(C);
+
+// Rechenzeit nach Mult (inkl. Overhead durch Aufruf)
+ c2 = clock();
+
+// Umrechnung in Sekunden:
+ double multtime;
+ multtime = (double)(c2-c1)/(double)CLOCKS_PER_SEC;
+
+printf("Mult mit Matrix Groesse %d: %f\n", N, multtime);
+
+// Ausgabe auskommentiert
+//  printf("========== A ============\n");
+//  print(A);
+//  printf("========== B ============\n");
+//  print(B);
+//  printf("========== C ============\n");
+//  print(C);
 }
