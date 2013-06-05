@@ -7,4 +7,4 @@ mmj:
 	javac multiply.java
 
 clean:
-	rm mmc multiply.java
+	rm mmc multiply.class
