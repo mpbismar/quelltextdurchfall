@@ -60,7 +60,7 @@ void mult(double C[N][N], double A[N][N], double B[N][N])
     for (k=0; k<N; k++) {
       C[i][k] = 0.0;
       for (m=0; m<N; m++)
-	C[i][k] += A[i][m]*B[m][k];
+      	C[i][k] += A[i][m]*B[m][k];
     }
   }
 }
@@ -88,10 +88,10 @@ int main()
 printf("Mult mit Matrix Groesse %d: %f\n", N, multtime);
 
 // Ausgabe auskommentiert
-//  printf("========== A ============\n");
-//  print(A);
-//  printf("========== B ============\n");
-//  print(B);
-//  printf("========== C ============\n");
-//  print(C);
+ printf("========== A ============\n");
+ print(A);
+ printf("========== B ============\n");
+ print(B);
+ printf("========== C ============\n");
+ print(C);
 }
