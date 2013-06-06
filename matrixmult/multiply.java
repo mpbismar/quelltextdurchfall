@@ -1,5 +1,5 @@
 class multiply{
-    static final int N = 10; // default value for the array sizes
+    static final int N = 500; // default value for the array sizes
 
     // Generate an matrix F of NxN elements
     // initialize it according to one of the following methods
@@ -72,13 +72,17 @@ class multiply{
 	B = init(2);
 	C = init(0);
 	// multiply them
+	double time1 = java.lang.System.nanoTime();
 	mult(C, A, B);
+	double time2 = java.lang.System.nanoTime();
+	System.out.println("runtime mit N=:" +N+ " :  " + ((time2-time1)/1000000) + " ms");
+
 	// print them out
-	System.out.println("========== A ============");
-	print(A);
-	System.out.println("========== B ============");
-	print(B);
-	System.out.println("========== C ============");
-	print(C);
+	// System.out.println("========== A ============");
+	// print(A);
+	// System.out.println("========== B ============");
+	// print(B);
+	// System.out.println("========== C ============");
+	// print(C);
     }
 }

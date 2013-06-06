@@ -56,7 +56,7 @@ void mult(double C[N][N], double A[N][N], double B[N][N])
 {
   int i,k,m;
   for (i=0; i<N; i++) {
-    printf("start %d/%d\n", i, N);
+//    printf("start %d/%d\n", i, N);
     for (k=0; k<N; k++) {
       C[i][k] = 0.0;
       for (m=0; m<N; m++)
