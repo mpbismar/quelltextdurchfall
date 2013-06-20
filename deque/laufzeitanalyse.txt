@@ -1,0 +1,17 @@
+Ausgabe der test.java: (mittels nanoTime)
+
+============================================================================
+runtime Liste mit 500 Elementen befuellt: 0.882641 ms
+runtime Ring mit 500 Elementen befuellt: 0.264082 ms
+
+runtime je 250mal Element aus Liste entfernt und Leerstring hinzugefuegt : 0.122764 ms
+runtime je 250mal Element aus Ring entfernt und Leerstring hinzugefuegt : 0.127501 ms
+test: Anzahl Ringelemente, Listenelemente: 500,500
+
+============================================================================
+
+Im statistischen Mittel zeigt sich, dass das Befuellen des Ringes mit Elementen stets deutlich schneller ist als mit der Liste, das Entfernen und Hinzufuegen eines einzelnen Elements aber meist ungefaehr gleichschnell ablaeuft. Dies ist aufgrund der sehr kleinen Zeiten aber nicht so signifikant.
+
+Dies erklaert sich vermutlich dadurch, dass im Ring nur auf einen genau bekannten Teil eines statischen Stuecks Speichers zugegriffen wird, waehrend in der Liste jedes Mal neue Objekte erzeugt werden muessen.
+
+Dafuer benoetigt bei grosser Kapazitaet, aber nur einer gering gefuellten Liste die verkettete Liste weniger Speicher.
