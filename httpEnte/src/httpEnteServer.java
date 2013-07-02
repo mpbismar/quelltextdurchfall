@@ -62,7 +62,7 @@ public class httpEnteServer {
 	
 	protected void listen() throws IOException
 	{
-		for(int i = 0; i < 1; i++)
+		for(int i = 0; i < 2; i++)
 		{
 			log("Server lauscht.");
 			Socket s = serv.accept();
