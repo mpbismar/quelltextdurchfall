@@ -23,15 +23,7 @@ public class httpEnteServer {
 	}
 	
 	
-	protected void gulp(Socket s) throws IOException
-	{
-		//log("Verbindung von " + s.getRemoteSocketAddress());
-		PrintWriter out = new PrintWriter(s.getOutputStream(), true);
-		out.println("gulp.");
-		log("Habe gulp gesendet. Beende nun Verbindung.");
-		s.close();
-		log("Verbindung beendet.");
-	}
+
 	
 	/**
 	 * erstellt den Socket und laesst ihn auf dem gewuenschten port lauschen
@@ -44,21 +36,14 @@ public class httpEnteServer {
 			serv = new ServerSocket(port);
 			log("Socket erstellt!");
 			
-			
-			
 			// jeder eingehenden Verbindung einen "Client"-Socket zuweisen
-			
-			for(int i = 0; i < 10; i++)
-			{
-				log("Server lauscht.");
-				Socket acceptor = serv.accept();
-				gulp(acceptor);
-			}
+			listen();
+
 			
 		}
 		catch(Exception e)
 		{
-			
+			log("server konnte nicht erstellt werden: " + e);
 		}
 		finally
 		{
@@ -72,6 +57,17 @@ public class httpEnteServer {
 			{
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	protected void listen() throws IOException
+	{
+		for(int i = 0; i < 1; i++)
+		{
+			log("Server lauscht.");
+			Socket s = serv.accept();
+			httpEnteThread tmp = new httpEnteThread(s, this);
+			tmp.run();
 		}
 	}
 	
