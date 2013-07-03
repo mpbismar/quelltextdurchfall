@@ -64,12 +64,12 @@ public class httpEnteServer {
 	
 	protected void listen() throws IOException
 	{
-		for(int i = 0; i < 2; i++)
+		while(true)
 		{
 			log("Server lauscht.");
 			Socket s = serv.accept();
-			httpEnteThread tmp = new httpEnteThread(s, this);
-			tmp.run();
+			Thread t = new Thread(new httpEnteThread(s, this));
+			t.run();
 		}
 	}
 	

@@ -1,22 +1,38 @@
 
-
-import java.io.*;
-import java.net.*;
-
-// Todo: remove
-
 public class httpEnteRunner {
 
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	@SuppressWarnings("unused")
+	public void main(String[] args) {
 		
-		httpEnteServer serv1 = new httpEnteServer(8003);
-		
+		if(args.length != 1)
+		{
+			usage();
+		}
+		else
+		{
+			int port = 80;
+			try
+			{
+				port = new Integer(args[0]);
+				httpEnteServer serv1 = new httpEnteServer(port);
+			}
+			catch(NumberFormatException e)
+			{
+				usage();
+			}		
 
-		
-
+		}
+	}
+	
+	public static void usage()
+	{
+		System.out.println("HTTP Ente v1");
+		System.out.println("Usage: <runner> port");
 	}
 
+		
+		
 }

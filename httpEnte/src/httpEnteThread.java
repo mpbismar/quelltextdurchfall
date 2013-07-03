@@ -3,7 +3,7 @@ import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
-public class httpEnteThread
+public class httpEnteThread implements Runnable
 {
 	
 	httpEnteServer server;
@@ -117,7 +117,7 @@ public class httpEnteThread
 			while(sc.hasNextLine())
 			{
 				line = sc.nextLine();
-				server.log("Debug: " + line );
+				//server.log("Debug: " + line );
 				out.println(line);
 				
 			}
@@ -141,7 +141,9 @@ public class httpEnteThread
 	
 	protected void show_bad_request()
 	{
-		out.println("302 Bad Request!");
+		out.println("HTTP/1.1 400 Bad Request");
+		out.println("Content-Type: text/html; charset=UTF-8");
+		load_page(new File(server.ErrorPath + "/400.htm"));
 	}
 	
 	protected void show_404()
