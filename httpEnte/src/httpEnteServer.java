@@ -5,6 +5,8 @@ import java.net.*;
 public class httpEnteServer {
 
 	int port;
+	String PagePath = "htDocs";
+	String ErrorPath = "errorDocs";
 	
 	String serverName = "HTTP Ente v1";
 	

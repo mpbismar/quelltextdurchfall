@@ -76,14 +76,86 @@ public class httpEnteThread
 
 	}
 	
-	protected void show_page(String path)
+	
+	
+	
+	protected void show_page(String reqpath)
 	{
-		out.println("page: " + path);
+		server.log("Request verlangt nach " + reqpath);
+		
+		// ggf. Sonderfaelle abfangen (zB. index)
+		reqpath = parseSpecial(reqpath);
+		
+		String path = server.PagePath + reqpath;
+		server.log("Suche Datei: " + path);
+		
+		File f = new File(path);
+		
+		// existiert die Datei? sonst 404
+		if (!f.exists())
+		{
+			show_404();
+		}
+		else
+		{
+			send_found_header();
+			load_page(f);		    
+		}
+	}
+	
+	
+	protected void load_page(File f)
+	{
+		// Datei existiert, zeilenweise einlesen und mit dem Socket verschicken		
+		
+		Scanner sc;
+		try {
+			
+			sc = new Scanner(f);
+			String line;
+			
+			while(sc.hasNextLine())
+			{
+				line = sc.nextLine();
+				server.log("Debug: " + line );
+				out.println(line);
+				
+			}
+			
+			sc.close();
+			
+		} catch (FileNotFoundException e) {
+			show_404();
+		}
+	}
+	
+	protected String parseSpecial(String path)
+	{
+		if(path.equals("/"))
+		{
+			return "/index.htm";
+		}
+		else
+			return path;
 	}
 	
 	protected void show_bad_request()
 	{
-		out.println("Bad Request!");
+		out.println("302 Bad Request!");
+	}
+	
+	protected void show_404()
+	{
+		server.log("404!");
+		out.println("HTTP/1.1 404 Not Found");
+		out.println("Content-Type: text/html; charset=UTF-8");
+		load_page(new File(server.ErrorPath + "/404.htm"));
+	}
+	
+	protected void send_found_header()
+	{
+		out.println("HTTP/1.1 200 OK");
+		out.println("Content-Type: text/html; charset=UTF-8");
 	}
 	
 	protected void close()
