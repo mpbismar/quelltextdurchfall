@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+//import java.util.LinkedList;
 import java.util.List;
 
 
@@ -10,6 +11,8 @@ public class BubbleTester {
 	public static void main(String[] args) {
 		
 		
+		
+		
 		// Liste anlegen (als Arraylist, siehe Aufgabe1.txt
 		
 		// In diesem Fall vom Typ Integer
@@ -17,7 +20,9 @@ public class BubbleTester {
 		List<Integer> unsorted = new ArrayList<Integer>();
 		
 		//int anzahl = getRandomInt();
-		int anzahl = 20;
+		
+		long s = System.nanoTime();
+		int anzahl = 1000;
 		
 		debug("Fuelle Liste mit " + anzahl + " zufaelligen Zahlen...");
 		
@@ -31,8 +36,10 @@ public class BubbleTester {
 		debug("Liste gefuellt. Sortiere...");
 		
 		List<Integer> sorted = Bubble.bubblesort(unsorted);
-		
+		s = System.nanoTime() -s;
 		printList(sorted);
+		debug("=============================");
+		debug("Dauer(ms): " + (s/1000000) );
 		
 
 	}
