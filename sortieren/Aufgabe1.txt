@@ -1,0 +1,7 @@
+Aufgabe1 Anmerkungen
+
+Als Listenrepraesentation haben wir ArrayList gewaehlt, da diese auch bei langen Listen schnelles Zugreifen auf einzelne Elemente relativ schnell ist, was in unserer Implementierung häufig vorkommt. Wir bedienen uns des Java-Standard Typs ArrayList.
+
+Dafür ist das Vertauschen der Elemente langsamer als bei einer verketteten Liste, da tatsächliche Objekte verschoben werden und nicht nur Referenzen verändert werden. Da in diesem Beispiel aber nur Integer verschoben werden, ist der Zeitaufwand unerheblich.
+
+Die Bubble Klasse und ihre Bubblesort Funktion sind in diesem Beispiel der Einfachheit halber auf Integer zugeschnitten, lassen sich aber leicht für andere Klassen oder generische Objekte zuschneiden, indem der Parameter/Rückgabetyp von Integer auf bspw. Object geändert wird, und die groesser-Methode die generische compareTo Methode verwendet. 
