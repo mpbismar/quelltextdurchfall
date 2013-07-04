@@ -5,11 +5,10 @@ public class Bubble {
 
 
 	
-	public static List<Integer> bubblesort(List<Integer> l)
-	{
+	public static <T extends Comparable<? super T>> List<T> bubblesort(List<T> l)
+	{	
 		// bla
 		int length = l.size();
-		
 		
 		//int apfelmus = l.get(3);
 		
@@ -25,11 +24,12 @@ public class Bubble {
 				
 				
 				
-				int a = l.get(j);
-				int b = l.get(j+1);
+				T a = l.get(j);
+				T b = l.get(j+1);
 				
-				if(groesser(a,b))
+				if((a.compareTo(b)) >0)
 				{
+					// swap
 					l.set(j+1, a);
 					l.set(j, b);
 					swapped = true;
@@ -41,13 +41,6 @@ public class Bubble {
 				break; 
 		}
 		return l;
-	}
-	
-	public static boolean groesser(int a, int b)
-	{
-		return (a>b);
-	}
-	
-	
+	}	
 
 }
