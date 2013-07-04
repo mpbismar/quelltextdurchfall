@@ -12,7 +12,7 @@ public class EingabeSortierer {
 	public static void main(String[] args) {
 		
 		System.out.println("usage: Parameter eingeben und mit Enter bestaetigen !");
-		System.out.println("usage: Beenden durch Leerzeile  !");
+		System.out.println("usage: Beenden durch Leere Zeile  !");
 
 		
         List<String> eingaben = new ArrayList<String>();
@@ -29,10 +29,12 @@ public class EingabeSortierer {
 		}
         
 		System.out.println(" Ende der Eingabe");
-		System.out.println(" Sortiere Liste");
+		System.out.println(" Sortiere Liste...");
 		
 		List<String> sorted = Bubble.bubblesort(eingaben);
-		
+		System.out.println("");
+		System.out.println("======================== Sortierte Liste:  =========================");
+
 		printList(sorted);
 
         
