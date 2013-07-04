@@ -9,13 +9,16 @@ public class BubbleTester {
 	 */
 	public static void main(String[] args) {
 		
+		
 		// Liste anlegen (als Arraylist, siehe Aufgabe1.txt
 		
 		// In diesem Fall vom Typ Integer
 		
 		List<Integer> unsorted = new ArrayList<Integer>();
 		
-		int anzahl = getRandomInt();
+		//int anzahl = getRandomInt();
+		int anzahl = 20;
+		
 		debug("Fuelle Liste mit " + anzahl + " zufaelligen Zahlen...");
 		
 		for (int i=0; i<anzahl; i++)
