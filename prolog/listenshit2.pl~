@@ -7,6 +7,13 @@
 %
 %
 %
+
+
+sortiert([[_,A,_,_],[_,B,_,_]|R]) :-
+	A < B,
+	sortiert([[_,B,_,_]|R]).
+sortiert([_]).
+
 raetsel :-
 
 	Leude = [_,_,_,_],
@@ -25,9 +32,10 @@ raetsel :-
 	member([_,C1,_,schach],Leude),
 	member([_,C2,mainz,_],Leude),
 	C1 < C2,
-%	B1 = B2 + 1,
+	B1 = (B2 + 1),
 %	B1 > B2,
 	A1 > A2,
+	sortiert(Leude),
 	print(Leude).
 
 
