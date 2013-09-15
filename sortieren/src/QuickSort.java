@@ -44,7 +44,7 @@ public class QuickSort
 		
 		for(;;) // unendliche schleife, wird mittels break verlassen
 		{
-			while(kleiner(arr[++i], pivot)); // i erhoehen bis an position eines elements > pivot
+			while(kleiner(arr[++i], pivot)); // i erhoehen bis an position eines elements >= pivot
 			while(kleiner(pivot, arr[--j])) // j verringern ("nach links gehen"), bis element < pivot
 			{	
 				if (j==L) break; // abbruch, wenn dabei an linke Grenze gestossen weil Pivot kleinstes Element

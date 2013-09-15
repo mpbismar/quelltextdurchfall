@@ -1,0 +1,35 @@
+
+
+
+% person(NAME,ALTER,ORT,HOBBY)
+%
+%
+%
+%
+%
+raetsel :-
+
+	Leude = [_,_,_,_],
+
+	member([david,_,berlin,_],Leude),
+	member([alexander,_,leipzig,_],Leude),
+	member([_,11,_,fussball], Leude),
+	member([david,A2,_,_],Leude),
+	member([florian,A1,_,klavier],Leude),
+	member([_,B1,_,handball],Leude),
+	member([_,B2,leipzig,_],Leude),
+	member([lukas,_,hamburg,_],Leude),
+	member([alexander,12,_,_],Leude),
+	member([lukas,13,_,_],Leude),
+	member([_,14,_,_],Leude),
+	member([_,C1,_,schach],Leude),
+	member([_,C2,mainz,_],Leude),
+	C1 < C2,
+%	B1 = B2 + 1,
+	B1 > B2,
+	A1 > A2,
+	print(Leude).
+
+
+
+

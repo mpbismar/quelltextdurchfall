@@ -6,14 +6,15 @@ public class QuickTester {
 		
 		System.out.println("Lets go!");
 		
-		final int N = 100000;
+		final int N = 5;
 		Integer[] random = new Integer[N];
 		
 		System.out.println("Fuelle Array: zufaellig");
 		fillStupid(random);
 		
-		//System.out.println("Vorher:");
-		//printArr(random);
+		System.out.println("Vorher:");
+		printArr(random);
+
 		
 		//System.out.println("Sortiere...");
 		try
@@ -27,8 +28,8 @@ public class QuickTester {
 			System.out.println("!!!!\nAbbruch wg Stack Overflow bei Rekursionsstiefe " + QuickSort.depth);
 		}
 		
-		//System.out.println("Nachher: ");
-		//printArr(random);
+		System.out.println("Nachher: ");
+		printArr(random);
 		
 		
 	}

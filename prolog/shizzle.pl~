@@ -1,0 +1,4 @@
+besser(burger, gurke).
+besser(gurke, nichts).
+besser(nichts, garnichts).
+besser(X,Z) :- besser(X,Y),besser(Y,Z).

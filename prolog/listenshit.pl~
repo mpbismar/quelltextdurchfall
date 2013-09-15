@@ -1,0 +1,5 @@
+auto(bmw,rot).
+auto(bmw,gelb).
+
+person(18,karl,berlin,toll).
+person(20,paul,berlin,doof).
