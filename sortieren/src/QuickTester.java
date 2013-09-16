@@ -6,11 +6,11 @@ public class QuickTester {
 		
 		System.out.println("Lets go!");
 		
-		final int N = 5;
+		final int N = 100;
 		Integer[] random = new Integer[N];
 		
 		System.out.println("Fuelle Array: zufaellig");
-		fillStupid(random);
+		fillRandom(random);
 		
 		System.out.println("Vorher:");
 		printArr(random);
