@@ -1,0 +1,20 @@
+
+public class LoesungTester {
+	
+	
+	public static boolean LoesungsTest(Loesung l)
+	{
+		Mensch m = new Mensch();
+		
+		//David wohnt in Berlin
+		m = l.getMenschByName(Mensch.NAME.DAVID, l.menschen);
+		if(m.ort != Mensch.WOHNORT.BERLIN) {return false;}
+		
+		
+		
+		
+		return false;
+	}
+	
+	
+}

@@ -1,0 +1,114 @@
+//import Mensch.NAME;
+
+
+public class Einsteinraetsel {
+
+	/**
+	 * @param args
+	 */
+
+	
+	public static void main(String[] args) {
+
+		
+		Mensch.NAME [] namen = Mensch.NAME.values();
+		Mensch.WOHNORT [] orte = Mensch.WOHNORT.values();
+		Mensch.HOBBY [] hobbys = Mensch.HOBBY.values();
+
+		int [] alter = new int[4];
+		int i;
+		for (i=11; i<=14; i++)
+		{
+			alter[i-11]=i;
+		}
+		int n=13;
+		
+		Mensch [] menschen = new Mensch[4];
+		Mensch m0 = new Mensch();
+		Mensch m1 = new Mensch();
+		Mensch m2 = new Mensch();
+		Mensch m3 = new Mensch();
+
+		m0.name = namen[0];
+		m1.name = namen[1];
+		m2.name = namen[2];
+		m3.name = namen[3];
+		
+		m0.print();
+		m1.print();
+		m2.print();
+		m3.print();
+		
+		int n0 =0;
+		int n1 =0;
+		int n2 =0;
+		int n3 =0;
+		
+		
+		for (n0 = 0; n0 < orte.length; n0++ )
+		{
+			m0.ort = orte[n0];
+			for (n1 = 0; n1 < hobbys.length; n1++)
+			{
+				m0.hobby = hobbys[n1];
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+//		Mensch m1 = new Mensch (namen[0], n, orte[0], hobbys[0]);
+//		menschen[0]= m1;
+//		menschen[0].print();
+		
+		
+
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/**
+		Mensch David = new Mensch();
+		David.setName(Mensch.NAME.DAVID);
+		
+		Mensch Alexander = new Mensch();
+		Alexander.setName(NAME.ALEXANDER);
+		
+		Mensch Lukas = new Mensch();
+		Lukas.setName(NAME.ALEXANDER);
+		
+		Mensch Florian= new Mensch();
+		Florian.setName(NAME.FLORIAN);
+		
+		
+		David.setWohnort(WOHNORT.BERLIN);
+		Alexander.setWohnort(WOHNORT.LEIPZIG);
+		Lukas.setWohnort(WOHNORT.HAMBURG);
+		Alexander.setAlter(ALTER.ZWOELF);
+		Lukas.setAlter(ALTER.DREIZEHN);
+		Florian.setHobby(HOBBY.KLAVIERSPIELEN);
+		
+**/
+			
+		
+	}
+	
+	public void printAll () 
+	{
+		
+	}
+	
+}

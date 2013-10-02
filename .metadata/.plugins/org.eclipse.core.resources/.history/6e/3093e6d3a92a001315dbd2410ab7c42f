@@ -1,0 +1,165 @@
+//import Mensch.NAME;
+
+
+public class Einsteinraetsel {
+
+	/**
+	 * @param args
+	 */
+
+	
+	public static void main(String[] args) {
+
+		
+		Mensch.NAME [] namen = Mensch.NAME.values();
+		Mensch.WOHNORT [] orte = Mensch.WOHNORT.values();
+		Mensch.HOBBY [] hobbys = Mensch.HOBBY.values();
+
+		int [] alter = new int[4];
+		int i;
+		for (i=11; i<=14; i++)
+		{
+			alter[i-11]=i;
+		}
+		int n=13;
+		
+		Mensch [] menschen = new Mensch[4];
+		Mensch m0 = new Mensch();
+		Mensch m1 = new Mensch();
+		Mensch m2 = new Mensch();
+		Mensch m3 = new Mensch();
+
+		m0.name = namen[0];
+		m1.name = namen[1];
+		m2.name = namen[2];
+		m3.name = namen[3];
+		
+		m0.print();
+		m1.print();
+		m2.print();
+		m3.print();
+		
+		int n0 =0;
+		int n1 =0;
+		int n2 =0;
+		int s0 =0;
+		int s1 =0;
+		int s2 =0;
+		int t0 =0;
+		int t1 =0;
+		int t2 =0;
+		int u0 =0;
+		int u1 =0;
+		int u2 =0;
+		
+		int a = 0;
+		
+		
+		
+		for (n0 = 0; n0 < orte.length; n0++ )
+		{
+			m0.ort = orte[n0];
+			for (n1 = 0; n1 < hobbys.length; n1++)
+			{
+				m0.hobby = hobbys[n1];
+				for (n2 = 0; n2 < alter.length; n2 ++)
+				{
+					m0.alter = alter[n2];
+					
+					
+					
+					for (s0 = 0; s0 < orte.length; s0++ )
+					{
+						m1.ort = orte[s0];
+						for (s1 = 0; s1 < hobbys.length; s1++)
+						{
+							m1.hobby = hobbys[s1];
+							for (s2 = 0; s2 < alter.length; s2 ++)
+							{
+								m1.alter = alter[s2];
+								
+								
+								
+								for (t0 = 0; t0 < orte.length; t0++ )
+								{
+									m2.ort = orte[t0];
+									for (t1 = 0; t1 < hobbys.length; t1++)
+									{
+										m2.hobby = hobbys[t1];
+										for (t2 = 0; t2 < alter.length; t2 ++)
+										{
+											m2.alter = alter[t2];
+										}
+										
+										
+										
+										for (u0 = 0; u0 < orte.length; u0++ )
+										{
+											m3.ort = orte[u0];
+											
+											for (u1 = 0; u1 < hobbys.length; u1++)
+											{
+												m3.hobby = hobbys[u1];
+												
+												for (u2 = 0; u2 < alter.length; u2 ++)
+												{
+													m3.alter = alter[u2];
+													
+													
+
+													menschen[0] = m0;
+													menschen[1] = m1;
+													menschen[2] = m2;
+													menschen[3] = m3;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		
+		
+		
+		
+/**
+		Mensch David = new Mensch();
+		David.setName(Mensch.NAME.DAVID);
+		
+		Mensch Alexander = new Mensch();
+		Alexander.setName(NAME.ALEXANDER);
+		
+		Mensch Lukas = new Mensch();
+		Lukas.setName(NAME.ALEXANDER);
+		
+		Mensch Florian= new Mensch();
+		Florian.setName(NAME.FLORIAN);
+		
+		
+		David.setWohnort(WOHNORT.BERLIN);
+		Alexander.setWohnort(WOHNORT.LEIPZIG);
+		Lukas.setWohnort(WOHNORT.HAMBURG);
+		Alexander.setAlter(ALTER.ZWOELF);
+		Lukas.setAlter(ALTER.DREIZEHN);
+		Florian.setHobby(HOBBY.KLAVIERSPIELEN);
+		
+**/
+			
+		
+	}
+	
+	public static void printAll (Mensch [] menschen) 
+	{
+		int a;
+		for (a=0; a < menschen.length; a++)
+		{
+			menschen[a].print();
+		}
+	}
+	
+}

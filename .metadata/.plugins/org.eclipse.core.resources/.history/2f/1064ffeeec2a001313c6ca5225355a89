@@ -1,0 +1,16 @@
+
+public class LoesungTester {
+	
+	
+	public static boolean LoesungsTest(Loesung l)
+	{
+		
+		
+		
+		
+		
+		return false;
+	}
+	
+	
+}

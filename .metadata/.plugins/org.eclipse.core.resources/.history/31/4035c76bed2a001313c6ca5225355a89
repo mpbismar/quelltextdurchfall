@@ -1,0 +1,17 @@
+
+public class LoesungTester {
+	
+	
+	public static boolean LoesungsTest(Mensch [] menschen)
+	{
+		
+		l.getMenschByName(Mensch.NAME.DAVID, )
+		
+		
+		
+		
+		return false;
+	}
+	
+	
+}

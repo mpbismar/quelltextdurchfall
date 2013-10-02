@@ -61,7 +61,7 @@ public class QuickSort
 	{
 		return (a.compareTo(b) < 0);
 	}
-	
+	 
 	private static <T extends Comparable<? super T>> void swap(T[] arr, int a, int b)
 	{
 		T tmp = arr[b];

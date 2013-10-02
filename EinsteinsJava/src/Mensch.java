@@ -10,6 +10,14 @@ public class Mensch
 	int alter;
 	WOHNORT ort;
 	
+	Mensch()
+	{
+		this.name=null;
+		this.alter=10;
+		this.hobby=null;
+		this.ort=null;
+	}
+	
 	Mensch(NAME newName, int newAlter, WOHNORT newOrt, HOBBY newHobby)
 	{
 		this.name = newName;
@@ -23,7 +31,7 @@ public class Mensch
 	
 	public void setAlter(int newAlter) 	
 	{
-		if (newAlter >= 11 && newAlter <= 14)
+		if ((newAlter >= 11) && (newAlter <= 14))
 		{
 			this.alter = newAlter;
 		}
@@ -35,16 +43,18 @@ public class Mensch
 		
 	public void setWohnort(WOHNORT newwohnort) 	{this.ort = newwohnort;}	
 	
-	public NAME getName() 	{return name;}	
-	public HOBBY getHobby() 	{return hobby;}	
-	public int getAlter() 	{return alter;}	
+	public NAME getName() 			{return name;}	
+	public HOBBY getHobby() 		{return hobby;}	
+	public int getAlter() 			{return alter;}	
 	public WOHNORT getWohnort() 	{return ort;}
 	
 	
 	
 	public void print()
 	{
-		System.out.println(name +" :   Hobby: "+hobby+", Alter: "+alter+", Wohnort: "+ort);
+		System.out.println(name +"   \t:   Hobby: "+hobby+", \tAlter: "+alter+", \tWohnort: "+ort);
 	}
+	
+
 		
 }

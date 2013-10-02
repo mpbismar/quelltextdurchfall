@@ -1,0 +1,17 @@
+
+public class LoesungTester {
+	
+	
+	public boolean LoesungsTest(Loesung l)
+	{
+		boolean antwort=false;
+		
+		
+		
+		
+		
+		return antwort;
+	}
+	
+	
+}

@@ -1,0 +1,164 @@
+//import Mensch.NAME;
+
+
+public class Einsteinraetsel {
+
+	/**
+	 * @param args
+	 */
+
+	
+	public static void main(String[] args) {
+
+		
+		Mensch.NAME [] namen = Mensch.NAME.values();
+		Mensch.WOHNORT [] orte = Mensch.WOHNORT.values();
+		Mensch.HOBBY [] hobbys = Mensch.HOBBY.values();
+
+		int [] alter = new int[4];
+		int i;
+		for (i=11; i<=14; i++)
+		{
+			alter[i-11]=i;
+		}
+		
+		Mensch [] menschen = new Mensch[4];
+		Mensch m0 = new Mensch();
+		Mensch m1 = new Mensch();
+		Mensch m2 = new Mensch();
+		Mensch m3 = new Mensch();
+
+		m0.name = namen[0];
+		m1.name = namen[1];
+		m2.name = namen[2];
+		m3.name = namen[3];
+		
+		
+		int n0 =0;
+		int n1 =0;
+		int n2 =0;
+		int s0 =0;
+		int s1 =0;
+		int s2 =0;
+		int t0 =0;
+		int t1 =0;
+		int t2 =0;
+		int u0 =0;
+		int u1 =0;
+		int u2 =0;
+		
+		Loesung [] loesungen = new Loesung [100];
+		
+		
+		
+		
+		for (n0 = 0; n0 < orte.length; n0++ )
+		{
+			m0.ort = orte[n0];
+			for (n1 = 0; n1 < hobbys.length; n1++)
+			{
+				m0.hobby = hobbys[n1];
+				for (n2 = 0; n2 < alter.length; n2 ++)
+				{
+					m0.alter = alter[n2];
+					
+					
+					
+					for (s0 = 0; s0 < orte.length; s0++ )
+					{
+						m1.ort = orte[s0];
+//						if (m0.ort == m1.ort) {break;}
+						for (s1 = 0; s1 < hobbys.length; s1++)
+						{
+							m1.hobby = hobbys[s1];
+//							if (m0.hobby == m1.hobby) {break;}
+							for (s2 = 0; s2 < alter.length; s2 ++)
+							{
+								m1.alter = alter[s2];
+//								if (m0.alter == m1.alter) {break;}
+
+								
+								
+								for (t0 = 0; t0 < orte.length; t0++ )
+								{
+									m2.ort = orte[t0];
+//									if ((m0.ort == m2.ort) || (m1.ort == m2.ort)) {break;}
+									for (t1 = 0; t1 < hobbys.length; t1++)
+									{
+										m2.hobby = hobbys[t1];
+//										if ((m0.hobby == m2.hobby) || (m1.hobby == m2.hobby)) {break;}
+										for (t2 = 0; t2 < alter.length; t2 ++)
+										{
+											m2.alter = alter[t2];
+//											if ((m0.alter == m2.alter) || (m1.alter == m2.alter)) {break;}
+										
+										
+										
+											for (u0 = 0; u0 < orte.length; u0++ )
+											{
+												m3.ort = orte[u0];
+//												if ((m0.ort == m3.ort) || (m1.ort == m3.ort) || (m2.ort == m3.ort)) {break;}
+												
+												for (u1 = 0; u1 < hobbys.length; u1++)
+												{
+													m3.hobby = hobbys[u1];
+//													if ((m0.hobby == m3.hobby) || (m1.hobby == m3.hobby) || (m2.hobby == m3.hobby)) {break;}
+													
+													for (u2 = 0; u2 < alter.length; u2 ++)
+													{
+														m3.alter = alter[u2];
+														
+														
+														if ((m0.alter == m3.alter) || (m1.alter == m3.alter) || (m2.alter == m3.alter) || (m0.alter == m2.alter) || (m1.alter == m2.alter) || (m0.alter == m1.alter)) {break;}
+														if ((m0.hobby == m3.hobby) || (m1.hobby == m3.hobby) || (m2.hobby == m3.hobby) || (m0.hobby == m2.hobby) || (m1.hobby == m2.hobby) || (m0.hobby == m1.hobby)) {break;}
+														if ((m0.ort == m3.ort) || (m1.ort == m3.ort) || (m2.ort == m3.ort) || (m0.ort == m2.ort) || (m1.ort == m2.ort) || (m0.ort == m1.ort)) {break;}
+	
+														menschen[0] = m0;
+														menschen[1] = m1;
+														menschen[2] = m2;
+														menschen[3] = m3;
+//														printAll(menschen);
+														
+														Loesung l = new Loesung (m0,m1,m2,m3);
+														if ( LoesungTester.LoesungsTest(l) )
+														{
+															loesungen[counter] = l;
+															Loesung.counter++;
+//															System.out.println(counter);
+															
+															
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		
+		
+		
+		
+
+			
+		
+	}
+	
+	public static void printAll (Mensch [] menschen) 
+	{
+		int a;
+		for (a=0; a < menschen.length; a++)
+		{
+			menschen[a].print();
+		}
+		System.out.println();
+
+	}
+	
+}

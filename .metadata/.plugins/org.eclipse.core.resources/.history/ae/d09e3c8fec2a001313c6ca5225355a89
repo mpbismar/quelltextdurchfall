@@ -1,0 +1,65 @@
+
+/**
+ * 
+ * @author Karl & Paul
+ * 
+ * Enthaelt eine moegliche Loesung fuer das Raetsel, bestehend aus
+ * vier Mensch-Objekten
+ *
+ */
+
+
+public class Loesung {
+
+	Mensch[] menschen;
+	
+	Loesung(Mensch m1, Mensch m2, Mensch m3, Mensch m4)
+	{
+		menschen = new Mensch[4];
+		menschen[0] = m1;
+		menschen[1] = m2;
+		menschen[2] = m3;
+		menschen[3] = m4;
+	}
+	
+	public void print ()
+	{
+		int a;
+		System.out.println("Loesung:");
+		for (a=0; a < menschen.length; a++)
+		{
+			menschen[a].print();
+		}
+		System.out.println();
+	}
+	
+	
+	/**
+	public Mensch getMenschByOrt(Mensch.WOHNORT ort)
+	{
+		return null;
+	}
+	public Mensch getMenschByAlter(int alter)
+	{
+		return null; 
+	}
+	public Mensch getMenschByHobby(Mensch.HOBBY hobby)
+	{
+		return null;
+	}
+	**/
+	public Mensch getMenschByName (Mensch.NAME name, Mensch[] menschen)
+	{
+		Mensch m = new Mensch();
+		int n = 0;
+		for (n=0 ; n < menschen.length ; n++)
+		{
+			if (menschen[n].name == name)
+			{
+				return menschen[n];
+				
+			}
+		}
+	}
+
+}
