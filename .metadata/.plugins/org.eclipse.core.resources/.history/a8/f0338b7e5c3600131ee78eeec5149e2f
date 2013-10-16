@@ -47,7 +47,7 @@ public class Einsteinraetsel {
 		int u1 =0;
 		int u2 =0;
 		
-		Loesung [] loesungen = new Loesung [10000];
+		Loesung [] loesungen = new Loesung [1000000];
 		boolean richtig = true;
 		
 		int counter=0;

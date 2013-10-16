@@ -31,10 +31,10 @@ public class LoesungTester {
 		a = l.getMenschByName(Mensch.NAME.DAVID, l.menschen);
 		if (m.alter <= a.alter) {return false;}
 		
-		//Der Handballspieler ist ein Jahr aelter als der Leipziger
-		m = l.getMenschByHobby(Mensch.HOBBY.HANDBALLSPIELEN, l.menschen);
-		a = l.getMenschByOrt(Mensch.WOHNORT.LEIPZIG, l.menschen);
-		if (m.alter != (a.alter +1)) {return false;}
+//		//Der Handballspieler ist ein Jahr aelter als der Leipziger
+//		m = l.getMenschByHobby(Mensch.HOBBY.HANDBALLSPIELEN, l.menschen);
+//		a = l.getMenschByOrt(Mensch.WOHNORT.LEIPZIG, l.menschen);
+//		if (m.alter != (a.alter +1)) {return false;}
 		
 		//Der Fussballspieler ist 11 Jahre alt
 		m = l.getMenschByHobby(Mensch.HOBBY.FUSSBALLSPIELEN, l.menschen);

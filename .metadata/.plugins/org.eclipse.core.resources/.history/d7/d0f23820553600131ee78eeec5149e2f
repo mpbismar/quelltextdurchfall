@@ -22,7 +22,7 @@ public class LoesungTester {
 		//Schachspieler juenger als Mainzer
 		m = l.getMenschByHobby(Mensch.HOBBY.SCHACHSPIELEN, l.menschen);
 		a = l.getMenschByOrt(Mensch.WOHNORT.MAINZ, l.menschen);
-		if (m.alter >= a.alter) {return false;}
+//		if (m.alter <= a.alter) {return false;}
 		
 		//Florian spielt Klavier...
 		m = l.getMenschByName(Mensch.NAME.FLORIAN, l.menschen);
@@ -31,15 +31,15 @@ public class LoesungTester {
 		a = l.getMenschByName(Mensch.NAME.DAVID, l.menschen);
 		if (m.alter <= a.alter) {return false;}
 		
-		//Der Handballspieler ist ein Jahr aelter als der Leipziger
-		m = l.getMenschByHobby(Mensch.HOBBY.HANDBALLSPIELEN, l.menschen);
-		a = l.getMenschByOrt(Mensch.WOHNORT.LEIPZIG, l.menschen);
-		if (m.alter != (a.alter +1)) {return false;}
+//		//Der Handballspieler ist ein Jahr aelter als der Leipziger
+//		m = l.getMenschByHobby(Mensch.HOBBY.HANDBALLSPIELEN, l.menschen);
+//		a = l.getMenschByOrt(Mensch.WOHNORT.LEIPZIG, l.menschen);
+//		if (m.alter != (a.alter +1)) {return false;}
 		
-		//Der Fussballspieler ist 11 Jahre alt
-		m = l.getMenschByHobby(Mensch.HOBBY.FUSSBALLSPIELEN, l.menschen);
-		t = 11;
-		if (m.alter != t) {return false;}
+//		//Der Fussballspieler ist 11 Jahre alt
+//		m = l.getMenschByHobby(Mensch.HOBBY.FUSSBALLSPIELEN, l.menschen);
+//		t = 11;
+//		if (m.alter != t) {return false;}
 		
 		//Lukas wohnt in Hamburg
 		m = l.getMenschByName(Mensch.NAME.LUKAS, l.menschen);

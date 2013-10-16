@@ -47,7 +47,7 @@ public class Einsteinraetsel {
 		int u1 =0;
 		int u2 =0;
 		
-		Loesung [] loesungen = new Loesung [10000];
+		Loesung [] loesungen = new Loesung [1000000];
 		boolean richtig = true;
 		
 		int counter=0;
@@ -131,7 +131,7 @@ public class Einsteinraetsel {
 														if ( (richtig) && (LoesungTester.LoesungsTest(l) )  )
 														{
 															loesungen[counter] = l;
-															l.print();
+//															l.print();
 															counter++;
 //															Loesung.print(loesungen);
 //															System.out.println(counter);
@@ -155,7 +155,7 @@ public class Einsteinraetsel {
 		System.out.println(moeglichkeiten+" Moeglichkeiten");
 		if (counter == 1)
 		{
-			System.out.println("Der Programmierer muss echt gut sein, es gibt genau eine Loesung: \n");
+			System.out.println("Der Programmierer muss echt gut sein, es gibt genau eine Loesung: ");
 		}
 		else
 		{
