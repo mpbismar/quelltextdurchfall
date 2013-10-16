@@ -47,7 +47,8 @@ public class Einsteinraetsel {
 		int u1 =0;
 		int u2 =0;
 		
-		Loesung [] loesungen = new Loesung [3500];
+		Loesung [] loesungen = new Loesung [1000000];
+		boolean richtig = true;
 		
 		int counter=0;
 		int moeglichkeiten=0;
@@ -66,7 +67,7 @@ public class Einsteinraetsel {
 					m0.alter = alter[n2];
 					
 					
-					
+/*	ALLE IF-ABFRAGEN MIT BREAK ANWEISUNG BIS '***' MACHEN KEINEN SINN!! VORSICHT DUMMHEIT!!! 		 */
 					for (s0 = 0; s0 < orte.length; s0++ )
 					{
 						m1.ort = orte[s0];
@@ -75,7 +76,7 @@ public class Einsteinraetsel {
 						{
 							m1.hobby = hobbys[s1];
 //							if (m0.hobby == m1.hobby) {break;}
-							for (s2 = 0; s2 < alter.length; s2 ++)
+							for (s2 = 0; s2 < alter.length; s2++)
 							{
 								m1.alter = alter[s2];
 //								if (m0.alter == m1.alter) {break;}
@@ -90,7 +91,7 @@ public class Einsteinraetsel {
 									{
 										m2.hobby = hobbys[t1];
 //										if ((m0.hobby == m2.hobby) || (m1.hobby == m2.hobby)) {break;}
-										for (t2 = 0; t2 < alter.length; t2 ++)
+										for (t2 = 0; t2 < alter.length; t2++)
 										{
 											m2.alter = alter[t2];
 //											if ((m0.alter == m2.alter) || (m1.alter == m2.alter)) {break;}
@@ -107,15 +108,17 @@ public class Einsteinraetsel {
 													m3.hobby = hobbys[u1];
 //													if ((m0.hobby == m3.hobby) || (m1.hobby == m3.hobby) || (m2.hobby == m3.hobby)) {break;}
 													
-													for (u2 = 0; u2 < alter.length; u2 ++)
+													for (u2 = 0; u2 < alter.length; u2++)
 													{
-														m3.alter = alter[u2];
-														
-														
-														if ((m0.alter == m3.alter) || (m1.alter == m3.alter) || (m2.alter == m3.alter) || (m0.alter == m2.alter) || (m1.alter == m2.alter) || (m0.alter == m1.alter)) {break;}
-														if ((m0.hobby == m3.hobby) || (m1.hobby == m3.hobby) || (m2.hobby == m3.hobby) || (m0.hobby == m2.hobby) || (m1.hobby == m2.hobby) || (m0.hobby == m1.hobby)) {break;}
-														if ((m0.ort == m3.ort) || (m1.ort == m3.ort) || (m2.ort == m3.ort) || (m0.ort == m2.ort) || (m1.ort == m2.ort) || (m0.ort == m1.ort)) {break;}
+														m3.alter = alter[u2];			
+//														if ((m0.alter == m3.alter) || (m1.alter == m3.alter) || (m2.alter == m3.alter)) {break;}
+													
+//														***
+														if ((m0.alter == m3.alter) || (m1.alter == m3.alter) || (m2.alter == m3.alter) || (m0.alter == m2.alter) || (m1.alter == m2.alter) || (m0.alter == m1.alter)) {richtig = false;}
+														if ((m0.hobby == m3.hobby) || (m1.hobby == m3.hobby) || (m2.hobby == m3.hobby) || (m0.hobby == m2.hobby) || (m1.hobby == m2.hobby) || (m0.hobby == m1.hobby)) {richtig = false;}
+														if ((m0.ort == m3.ort)     || (m1.ort == m3.ort)     || (m2.ort == m3.ort)     || (m0.ort == m2.ort)     || (m1.ort == m2.ort)     || (m0.ort == m1.ort    )) {richtig = false;}
 	
+														
 														menschen[0] = m0;
 														menschen[1] = m1;
 														menschen[2] = m2;
@@ -125,7 +128,7 @@ public class Einsteinraetsel {
 														
 														
 														Loesung l = new Loesung (m0,m1,m2,m3);
-														if ( LoesungTester.LoesungsTest(l) )
+														if ( (richtig=true) && (LoesungTester.LoesungsTest(l) )  )
 														{
 															loesungen[counter] = l;
 															l.print();
@@ -135,6 +138,7 @@ public class Einsteinraetsel {
 															
 															
 														}
+														richtig=true;
 													}
 												}
 											}

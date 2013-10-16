@@ -5,6 +5,7 @@
 <fullyQualifiedTypeName name="Einsteinraetsel.WOHNORT"/>
 <fullyQualifiedTypeName name="Einsteinraetsel.ALTER"/>
 <fullyQualifiedTypeName name="Mensch.ALTER"/>
+<fullyQualifiedTypeName name="Mensch.HOBBY"/>
 <fullyQualifiedTypeName name="Mensch.WOHNORT"/>
 <fullyQualifiedTypeName name="Mensch.NAME"/>
 </qualifiedTypeNameHistroy>

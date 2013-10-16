@@ -1,4 +1,4 @@
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Enum"><rhs name\="Mensch$WOHNORT"/><rhs name\="Mensch$ALTER"/><rhs name\="Mensch$NAME"/></lhs><lhs name\="Mensch$WOHNORT"><rhs name\="Mensch$WOHNORT"/></lhs><lhs name\="Mensch$ALTER"><rhs name\="Mensch$ALTER"/></lhs><lhs name\="Mensch$NAME"><rhs name\="Mensch$NAME"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Enum"><rhs name\="Mensch$ALTER"/><rhs name\="Mensch$WOHNORT"/><rhs name\="Mensch$HOBBY"/><rhs name\="Mensch$NAME"/></lhs><lhs name\="Mensch$WOHNORT"><rhs name\="Mensch$WOHNORT"/></lhs><lhs name\="Mensch$ALTER"><rhs name\="Mensch$ALTER"/></lhs><lhs name\="Mensch$NAME"><rhs name\="Mensch$NAME"/></lhs><lhs name\="Mensch$HOBBY"><rhs name\="Mensch$HOBBY"/></lhs></history>
 content_assist_number_of_computers=13
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0
